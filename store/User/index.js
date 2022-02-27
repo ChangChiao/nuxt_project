@@ -3,7 +3,7 @@ export const state = () => ({
   })
   
   export const actions = {
-    handleRevise({ commit }) {
+    handUserLog({ commit }) {
       commit('reviseName')
     },
   }

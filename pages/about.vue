@@ -19,8 +19,8 @@ export default {
     $globalPlugin.log('lu lu lu')
   },
   asyncData(context) {
-      const count = context.app.store.state.count;
-      return { count }
+    const count = context.app.store.state.count
+    return { count }
   },
   methods: {
     handleClick() {
@@ -31,13 +31,18 @@ export default {
     console.log('this', this)
     //global
     this.$globalPlugin.log('yo yo yo')
-    
+
     //store
     console.log('index', this.$store.state.count)
-    
+
     //module
-    console.log(this.$store.state.User.name);
-    this.$store.dispatch("User/handUserLog")
+    console.log(this.$store.state.User.name)
+    this.$store.dispatch('User/handUserLog')
+
+    //cors test
+    axios.get('/VsWeb/api/GetLstDicCinema').then((res) => {
+      console.log(res.data)
+    })
   },
 }
 </script>
