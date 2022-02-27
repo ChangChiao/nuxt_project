@@ -9,11 +9,11 @@ export default {
 <template>
   <div>
     <Header />
-    <!-- <header>
+    <header>
       <nuxt-link to="/">home</nuxt-link>
       <nuxt-link to="/about">about</nuxt-link>
       <nuxt-link to="/life">life</nuxt-link>
-    </header> -->
+    </header>
     <Nuxt keep-alive />
     <Footer />
   </div>

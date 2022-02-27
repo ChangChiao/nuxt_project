@@ -5,7 +5,7 @@ export default {};
   <footer>
     <div>
       <div class="left_box">
-        <h4>Mike Cheng</h4>
+        <h4>Chang</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula
           ipsum non leo tristique eget facilisis lacus commodo. Curabitur vitae

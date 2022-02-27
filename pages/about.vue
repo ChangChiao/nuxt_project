@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios'
 export default {
   head: {
     titleTemplate: '%s - Nuxt',
@@ -10,9 +11,42 @@ export default {
       { hid: 'description', name: 'description', content: 'Meta description' },
     ],
   },
+  async asyncData({ $axios, $globalPlugin }) {
+    //   console.log($axios);
+    const res = await $axios.get(
+      'https://vue-lessons-api.herokuapp.com/photo/list '
+    )
+    $globalPlugin.log('lu lu lu')
+  },
+  asyncData(context) {
+      const count = context.app.store.state.count;
+      return { count }
+  },
+  methods: {
+    handleClick() {
+      this.$store.dispatch('handleAdd')
+    },
+  },
+  mounted() {
+    console.log('this', this)
+    //global
+    this.$globalPlugin.log('yo yo yo')
+    
+    //store
+    console.log('index', this.$store.state.count)
+    
+    //module
+    console.log(this.$store.state.User.name);
+    this.$store.dispatch("User/handUserLog")
+  },
 }
 </script>
 
 <template>
-  <h1>about me</h1>
+  <div>
+    <h1>about me</h1>
+    <p>{{ $store.state.count }}</p>
+    <p>{{ count }}</p>
+    <button @click="handleClick">add</button>
+  </div>
 </template>
