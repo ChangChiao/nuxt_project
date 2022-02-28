@@ -36,6 +36,7 @@ export default {
 <template>
   <div>
     <p>{{ title }}</p>
+    {{ $t('welcome') }}
     <p v-if="$fetchState.pending">Loading</p>
     <p v-if="$fetchState.error">ERROR {{ $fetchState.error }}</p>
     <!-- <h1 class="title">{{ name }}</h1> -->

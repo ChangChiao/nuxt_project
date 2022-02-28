@@ -1,3 +1,7 @@
+import en from "./locales/en"
+import es from "./locales/es"
+import fr from "./locales/fr"
+import zh from "./locales/zh"
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -27,7 +31,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/proxy'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/proxy', 'nuxt-i18n'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -35,6 +39,19 @@ export default {
     '/VsWeb/api/*': {
       target: 'http://www.vscinemas.com.tw/',
       changeOrigin: true,
+    },
+  },
+  i18n: {
+    locales: ['en', 'fr', 'es', 'zh-tw'],
+    defaultLocale: 'zh-tw',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en,
+        fr,
+        es,
+        "zh-tw":zh
+      },
     },
   },
 }
